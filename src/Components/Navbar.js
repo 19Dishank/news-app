@@ -30,11 +30,12 @@ const Navbar = (props) => {
             <Link className="nav-link" to="/about">ℹ️ About</Link>
           </li>
         </ul>
-      </div>
-      <div className={`form-check form-switch mx-3 text-${props.mode==='light'?'dark':'light '}`}>
+        <div className={`form-check form-switch mx-3 text-${props.mode==='light'?'dark':'light '}`}>
               <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onClick={props.changemode}/>
               <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Change Mode</label>
             </div>
+      </div>
+      
     </nav>
 
   )

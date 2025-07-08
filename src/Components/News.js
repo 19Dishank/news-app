@@ -96,6 +96,7 @@ const News = (props) => {
               {articles.map((element) => (
                 <div key={element?.url || Math.random()} className="col-md-4 my-3">
                   <NewsItem
+                  mode={props.mode}
                     imgurl={element?.urlToImage}
                     title={element?.title || 'No Title'}
                     description={element?.description || 'No Description'}

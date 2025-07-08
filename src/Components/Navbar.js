@@ -3,8 +3,10 @@ import React from 'react'
 
 const Navbar = (props) => {
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow-sm mx-3">
-      <Link className="navbar-brand fw-bold text-primary" to="/">QuickyNews</Link>
+
+    <nav className={`navbar fixed-top navbar-expand-lg navbar-${props.mode} bg-${props.mode} shadow-sm`}>
+      
+      <Link className="navbar-brand fw-bold text-primary mx-3" to="/">QuickyNews</Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -29,7 +31,12 @@ const Navbar = (props) => {
           </li>
         </ul>
       </div>
+      <div className={`form-check form-switch mx-3 text-${props.mode==='light'?'dark':'light '}`}>
+              <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onClick={props.changemode}/>
+              <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Change Mode</label>
+            </div>
     </nav>
+
   )
 }
 

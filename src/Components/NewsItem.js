@@ -46,9 +46,12 @@ const NewsItem = (props) => {
           object-fit: contain;
           background-color: #000;
         }
+          
       `}</style>
 
-      <div className={`card h-100 shadow news-card mx-auto ${cardClass}`}>
+      <div className={`card h-100 shadow  news-card mx-auto ${cardClass}`}>
+        <span class="position-absolute translate-middle badge rounded-pill start-50 bg-danger ">
+    Source: {source}</span>
         <img
           src={
             imgurl ||
@@ -64,7 +67,7 @@ const NewsItem = (props) => {
           <div>
             <span className={`sizee ${mutedText}`}>{formattedDate}</span>
             <br />
-            <span className={mutedText}>Source: {source}</span>
+            {/* <span className={mutedText}>Source: {source}</span> */}
           </div>
           <a
             href={newsurl}

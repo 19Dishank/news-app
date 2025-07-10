@@ -10,23 +10,30 @@ import Alert from './Components/Alert';
 
 
 
+
 function App (props) {
   const apiKey=process.env.REACT_APP_NEWS_API
   // apiKey="02c817a482804442856a231fedb3eb31"
   // apiKey="21fc994dd6554016a0eeaf6a47b4a0de"
   const [mode, setmode] = useState('light')
+  const [modetxt, setmodetxt] = useState('Light mode')
+  
   const changemode=()=>{
     if(mode === 'light'){
       setmode('dark')
       document.body.style.backgroundColor='#151618'
       document.body.style.color='white'
       showAlert("dark mode has been unabled","success")
+     
+      setmodetxt("Light Mode");
     }
     else{
       setmode('light')
       document.body.style.backgroundColor='white'
       document.body.style.color='black'
       showAlert("Light mode has been unabled","success")
+      setmodetxt("Dark mode")
+      
     }
   }
     const [alert, setalert] = useState(null)
@@ -42,7 +49,7 @@ function App (props) {
   }
     return (
       <BrowserRouter>
-      <Navbar mode={mode} changemode={changemode} />
+      <Navbar mode={mode} changemode={changemode}  modetxt={modetxt} />
       <Alert alert={alert} />
         <Routes>
           <Route exact path="/" element={<News key="general" mode={mode} apiKey={apiKey}  category="general" />} />

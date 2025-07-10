@@ -16,7 +16,7 @@ function App (props) {
   // apiKey="02c817a482804442856a231fedb3eb31"
   // apiKey="21fc994dd6554016a0eeaf6a47b4a0de"
   const [mode, setmode] = useState('light')
-  const [modetxt, setmodetxt] = useState('Light mode')
+  const [modetxt, setmodetxt] = useState('Change to Dark mode')
   
   const changemode=()=>{
     if(mode === 'light'){
@@ -25,14 +25,14 @@ function App (props) {
       document.body.style.color='white'
       showAlert("dark mode has been unabled","success")
      
-      setmodetxt("Light Mode");
+      setmodetxt("Change to Light Mode");
     }
     else{
       setmode('light')
       document.body.style.backgroundColor='white'
       document.body.style.color='black'
       showAlert("Light mode has been unabled","success")
-      setmodetxt("Dark mode")
+      setmodetxt("Change to Dark mode")
       
     }
   }
